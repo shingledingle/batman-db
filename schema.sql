@@ -10,3 +10,9 @@ CREATE TABLE characters (
     home_base           VARCHAR(100),
     status              VARCHAR(10), CHECK (status IN ('alive', 'deceased', 'unknown'))
 );
+INSERT INTO characters (name, alias, alignment, first_appearance, first_year, home_base, status) VALUES
+('Clark Kent', 'Superman', 'hero', 'Action Comics #1', 1938, 'Metropolis', 'alive'),
+('Bruce Wayne', 'Batman', 'hero', 'Detective Comics #27', 1939, 'Gotham City', 'alive'),
+('Diana Prince', 'Wonder Woman', 'hero', 'All-Star Comics #8', 1941, 'Themyscira', 'alive');
+
+SELECT alignment, COUNT(*) FROM characters GROUP BY alignment;
